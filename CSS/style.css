@@ -341,15 +341,15 @@ h3.my-profession::before {
 }
 
 .home-info p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 3rem;
-  position: relative;
-  padding-left: 2rem;
-  border-left: 3px solid var(--skin-color);
-  font-family: 'Kanit', sans-serif;
-
-  
+ font-size: 18px; /* ปรับขนาดให้ชัดเจนขึ้น */
+    line-height: 1.8; /* เพิ่มระยะห่างระหว่างบรรทัดให้อ่านง่าย */
+    margin-bottom: 30px;
+    color: var(--text-black-700);
+    text-align: justify; /* จัดข้อความให้หน้า-หลังตรงกันสวยงาม */
+    text-justify: inter-word; /* ช่วยกระจายช่องว่างให้ดูเป็นธรรมชาติ */
+    font-family: 'Kanit', sans-serif;
+    border-left: 4px solid var(--skin-color);
+    padding-left: 20px;
 }
 
 .home-img {
@@ -905,10 +905,58 @@ h3.my-profession::before {
     flex: 0 0 100%;
     max-width: 100%;
   }
+  .home .home-info h3.my-profession {
+    font-size: 30px;
+    margin: 15px 0;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
   .home .home-img
   {
     display: none;
   }
+}
+
+
+/* การตั้งค่าพื้นหลัง Modal */
+#imageModal {
+    display: none; /* ซ่อนไว้เริ่มต้น */
+    position: fixed;
+    z-index: 9999; /* ให้อยู่หน้าสุดของทุกอย่าง */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* พื้นหลังดำโปร่งแสง */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* การตั้งค่ารูปภาพข้างใน Modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid var(--skin-color); /* เพิ่มขอบสีม่วงให้เข้ากับ Theme */
+    border-radius: 10px;
+}
+
+/* ปุ่มปิด (กากบาท) */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
 }
 @media (max-width: 767px) 
 {

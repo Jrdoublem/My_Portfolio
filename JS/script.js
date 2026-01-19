@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
 window.addEventListener('scroll', function() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav li a');
